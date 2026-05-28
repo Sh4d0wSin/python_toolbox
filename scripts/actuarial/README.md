@@ -1,11 +1,11 @@
 # Actuarial Data Scripts
 
-A collection of Python scripts simulating actuarial data workflows — covering data generation, exploration, aggregation, pipeline processing, and output validation. Built using `pandas`, `numpy`, and the Python standard library.
+A collection of Python scripts simulating actuarial data workflows — covering data generation, exploration, aggregation, pipeline processing, output validation, visualization, and data merging. Built using `pandas`, `numpy`, `matplotlib`, and `openpyxl`.
 
 ## Setup
 
 ```bash
-pip install pandas numpy
+pip install pandas numpy matplotlib openpyxl
 ```
 
 ---
@@ -57,10 +57,18 @@ python output_validator.py
 
 ---
 
-### `claims_visualizer.py` *(in progress)*
-Will produce bar and line charts from claims data using `matplotlib`.
+### `claims_visualizer.py`
+Reads `claims.csv` and produces two charts using `matplotlib`. A bar chart shows total claim amount per line of business; a line chart shows total claim amount trend by month. Both are saved as PNG files (`bar_chart.png`, `line_chart.png`).
+
+```bash
+python claims_visualizer.py
+```
 
 ---
 
-### `policy_merger.py` *(in progress)*
-Will simulate a Power Query-style merge of two data sources on a shared key, fill missing values, compute a derived column, and export to Excel.
+### `policy_merger.py`
+Simulates a Power Query-style data merge. Joins a claims DataFrame and a policy DataFrame on `policy_id` using an outer join, fills missing values with `.fillna()`, computes a `claim_ratio` column (`claim_amount / premium`), and exports the result to Excel via `openpyxl`.
+
+```bash
+python policy_merger.py
+```
