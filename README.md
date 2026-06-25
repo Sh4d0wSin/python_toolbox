@@ -27,6 +27,20 @@ Practical Python CLI tools and data scripts covering file management, security, 
 - Accepts a log file path as a CLI argument and prints a summary report
 - Includes a `sample.log` file for quick testing
 
+### `data_analytics/`
+A suite of data analytics scripts organised by category:
+
+**`visualization/`**
+- **`expense_tracker.py`** — reads a transactions CSV, summarizes spending by category and month, and renders a pie chart and bar chart using `matplotlib`
+
+**`pandas_numpy/`**
+- **`csv_profiler.py`** — profiles any CSV and reports row/column counts, data types, null counts, unique value counts, and min/max/mean for numeric columns
+
+**`pipeline/`**
+- **`dataset_comparator.py`** — compares two CSVs and reports shape differences, added/missing columns, and changed values using `pandas.DataFrame.compare()`
+
+---
+
 ### `actuarial/`
 A suite of scripts simulating actuarial data workflows:
 - **`generate_claims.py`** — generates a synthetic claims CSV with random dates, lines of business, amounts, and statuses
